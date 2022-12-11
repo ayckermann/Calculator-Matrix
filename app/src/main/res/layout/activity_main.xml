@@ -5,6 +5,18 @@
     android:orientation="vertical" >
 
     <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="Calculator Matrix"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -59,11 +71,13 @@
 
         <TableLayout
             android:id="@+id/tblInputA"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="22dp">
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_horizontal">
 
         </TableLayout>
 
@@ -114,26 +128,21 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
-
-    </LinearLayout>
-
-    <LinearLayout
         android:id="@+id/layoutViewB"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
         android:orientation="vertical">
 
         <TableLayout
             android:id="@+id/tblInputB"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="49dp"
-            android:layout_marginTop="22dp">
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_horizontal">
 
         </TableLayout>
 
@@ -158,17 +167,23 @@
             android:text="Result" />
     </LinearLayout>
 
-    <TableLayout
-        android:id="@+id/TableLayout2"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="49dp"
-        android:layout_marginTop="22dp">
+        android:gravity="center_horizontal">
 
-    </TableLayout>
 
+        <TableLayout
+            android:id="@+id/TableLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal">
+
+        </TableLayout>
+    </LinearLayout>
 
 
 </LinearLayout>

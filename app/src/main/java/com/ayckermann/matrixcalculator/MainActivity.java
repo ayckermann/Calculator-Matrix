@@ -287,6 +287,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         int col = matrixResult.getY();
         Log.e("row", Integer.toString(row));
         Log.e("col", Integer.toString(col));
+
+
         for(i=0;i<row;i++)
         {
             final TableRow row1 = new TableRow(MainActivity.this);
@@ -298,7 +300,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 txt.setTextSize(TypedValue.COMPLEX_UNIT_PT, 8);
                 txt.setTypeface(Typeface.SERIF, Typeface.BOLD);
                 txt.setGravity(Gravity.LEFT);
-                txt.setText(matrixResult.value[i][j].toString() + " ");
+                txt.setText(removeTrailingZeroes(matrixResult.value[i][j].toString()) + " ");
                 row1.addView(txt);
             }
             TabLayout_Show.addView(row1);
@@ -314,5 +316,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
+    }
+    String removeTrailingZeroes(String s) {
+        s = s.contains(".") ? s.replaceAll("0*$","").replaceAll("\\.$","") : s;
+        return s;
     }
 }
