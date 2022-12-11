@@ -122,7 +122,7 @@ public class Matrix {
 
         for (int i = 0; i < x; i++) {
             for (int j =0; j < y; j++){
-                if(i != a-1 && j != b-1){
+                if(i != a && j != b){
                     if(b1<y-1){
                         hasil.value[a1][b1] = value[i][j];
                         b1++;
@@ -148,13 +148,13 @@ public class Matrix {
         for(int i =0;i < x;i++){
             for(int j =0 ; j < y;j++){
                 if(i%2 ==0 && j%2 !=0){
-                    hasil.value[i][j] = -1 * detMinor(i+1,j+1);
+                    hasil.value[i][j] = -1 * detMinor(i,j);
                 }
                 else if(i%2!=0 && j%2==0){
-                    hasil.value[i][j] = -1 * detMinor(i+1,j+1);
+                    hasil.value[i][j] = -1 * detMinor(i,j);
                 }
                 else{
-                    hasil.value[i][j] =detMinor(i+1,j+1);
+                    hasil.value[i][j] =detMinor(i,j);
                 }
             }
         }
@@ -162,47 +162,60 @@ public class Matrix {
 
     }
     public Matrix adjoin(){
-        Matrix hasil = kofaktor();
+        Matrix hasil = this.kofaktor();
         return hasil.transpose();
 
     }
 
     public Matrix invers(){
-        Matrix hasil = adjoin();
-        double det = determinan();
-
-        return hasil.kaliKoefisien(1/det);
+        Matrix hasil = this.adjoin();
+        if(x==2 && y==2){
+            double det = determinan();
+            Double temp2[][] = {{value[1][1],-1*value[0][1]},{-1*value[1][0],value[0][0]} };
+            Matrix temp = new Matrix(x,y,temp2);
+            hasil = temp.kaliKoefisien(1/det);
+        }
+        else if(x>2 && y>2){
+            Matrix temp = this.adjoin();
+            double det = determinan();
+            hasil = temp.kaliKoefisien(1/det);
+        }
+        return hasil;
     }
     public double determinan(){
-        if(x==2 && y==2){
+        if (x==1 && y ==1){
+            return value[0][0];
+        }
+
+        else if(x==2 && y==2){
             double hasil = (value[0][0] * value[1][1]) - (value[0][1]*value[1][0]) ;
             return hasil;
         }
         else if(x==3 && y==3){
             double hasil =0;
-            hasil = (value[0][0] * detMinor(1,1)) -
-                    (value[0][1] * detMinor(1,2)) +
-                    (value[0][2] * detMinor(1,3))
+            hasil = (value[0][0] * detMinor(0,0)) -
+                    (value[0][1] * detMinor(0,1)) +
+                    (value[0][2] * detMinor(0,2))
             ;
             return hasil;
         }
         else if(x==4 && y==4){
             double hasil;
-            hasil = (value[0][0] * detMinor(1,1)) -
-                    (value[0][1] * detMinor(1,2)) +
-                    (value[0][2] * detMinor(1,3)) -
-                    (value[0][3] * detMinor(1,4));
+            hasil = (value[0][0] * detMinor(0,0)) -
+                    (value[0][1] * detMinor(0,1)) +
+                    (value[0][2] * detMinor(0,2)) -
+                    (value[0][3] * detMinor(0,3));
 
             return hasil;
 
         }
         else if(x==5 && y==5){
             double hasil;
-            hasil = (value[0][0] * detMinor(1,1)) -
-                    (value[0][1] * detMinor(1,2)) +
-                    (value[0][2] * detMinor(1,3)) -
-                    (value[0][4] * detMinor(1,4)) +
-                    (value[0][5] * detMinor(1,5));
+            hasil = (value[0][0] * detMinor(0,0)) -
+                    (value[0][1] * detMinor(0,1)) +
+                    (value[0][2] * detMinor(0,2)) -
+                    (value[0][4] * detMinor(0,3)) +
+                    (value[0][5] * detMinor(0,4));
 
             return hasil;
 

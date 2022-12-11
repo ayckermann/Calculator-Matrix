@@ -245,12 +245,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 matrixResult = matrixB.transpose();
                 break;
             case 5:
-                Double determinantA[][] = new Double[0][0];
+                Double determinantA[][] = new Double[1][1];
                 determinantA[0][0] = matrixA.determinan();
                 matrixResult = new Matrix(1,1,determinantA);
                 break;
             case 6:
-                Double determinantB[][] = new Double[0][0];
+                Double determinantB[][] = new Double[1][1];
                 determinantB[0][0] = matrixB.determinan();
                 matrixResult = new Matrix(1,1,determinantB);
                 break;
