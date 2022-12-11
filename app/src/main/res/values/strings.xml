@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Matrix Calculator</string>
+    <string-array name="operation">
+        <item>Addition</item>
+        <item>Substraction</item>
+        <item>Multiplication</item>
+        <item>Transpose A</item>
+        <item>Transpose B</item>
+        <item>Determinant A</item>
+        <item>Determinant B</item>
+        <item>Cofactor A</item>
+        <item>Cofactor A</item>
+        <item>Adjoin A</item>
+        <item>Adjoin B</item>
+        <item>Inverse A</item>
+        <item>Inverse B</item>
+    </string-array>
+</resources>
