@@ -142,6 +142,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 txt.setHintTextColor(Color.rgb(173, 181, 189));
                 txt.setTextSize(TypedValue.COMPLEX_UNIT_PT, 8);
                 txt.setTypeface(Typeface.SERIF, Typeface.BOLD);
+                txt.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 txt.setHint("A" +(i+1)+(j+1)+"  ");
                 row.addView(txt);
 
@@ -227,6 +228,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 txt.setHintTextColor(Color.rgb(173, 181, 189));
                 txt.setTextSize(TypedValue.COMPLEX_UNIT_PT, 8);
                 txt.setTypeface(Typeface.SERIF, Typeface.BOLD);
+                txt.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 txt.setHint("B" +(i+1)+(j+1)+"  ");
                 row.addView(txt);
 
