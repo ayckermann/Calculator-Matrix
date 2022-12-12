@@ -1,189 +1,217 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" >
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        android:text="Calculator Matrix"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Create Matrix A"
-        android:textColor="#000000" />
-
+    android:id="@+id/scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/white"
+        android:orientation="vertical" >
 
 
-        <EditText
-            android:id="@+id/edtRowA"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="Input row"
-            android:inputType="number"
-            tools:ignore="TouchTargetSizeCheck">
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="15dp"
+            android:text="Matrix Calculator"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
-            <requestFocus />
-        </EditText>
-
-        <EditText
-            android:id="@+id/edtColA"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="Input column"
-            android:inputType="number"
-            tools:ignore="TouchTargetSizeCheck" />
+            android:text="Create Matrix A"
+            android:textColor="#000000"
+            android:textSize="16dp" />
 
-        <Button
-            android:id="@+id/btnAddA"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+
+            <EditText
+                android:id="@+id/edtRowA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Input row"
+                android:inputType="number"
+                tools:ignore="TouchTargetSizeCheck">
+
+                <requestFocus />
+            </EditText>
+
+            <EditText
+                android:id="@+id/edtColA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Input column"
+                android:inputType="number"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/btnAddA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/layoutViewA"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Enter" />
+            android:layout_gravity="center_horizontal"
+            android:foregroundGravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
-    </LinearLayout>
+            <TableLayout
+                android:id="@+id/tblInputA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_horizontal">
+
+            </TableLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutButttonA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"></LinearLayout>
+
+        </LinearLayout>
 
 
-    <LinearLayout
-        android:id="@+id/layoutViewA"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:foregroundGravity="center_horizontal"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
-
-        <TableLayout
-            android:id="@+id/tblInputA"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
             android:layout_marginTop="10dp"
+            android:text="Create Matrix B"
+            android:textColor="#000000"
+            android:textSize="16dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+
+            <EditText
+                android:id="@+id/edtRowB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="Input row"
+                tools:ignore="TouchTargetSizeCheck">
+
+
+            </EditText>
+
+            <EditText
+                android:id="@+id/edtColB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Input column"
+                android:inputType="number"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/btnAddB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutViewB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TableLayout
+                android:id="@+id/tblInputB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_horizontal">
+
+            </TableLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutButtonB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"></LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+            <Button
+                android:id="@+id/Show"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Result" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:gravity="center_horizontal">
 
-        </TableLayout>
+
+            <TableLayout
+                android:id="@+id/TableLayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="20dp"
+                android:gravity="center_horizontal">
+
+            </TableLayout>
+        </LinearLayout>
+
+
 
     </LinearLayout>
-
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Create Matrix B"
-        android:textColor="#000000" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
-
-        <EditText
-            android:id="@+id/edtRowB"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="number"
-            android:hint="Input row"
-            tools:ignore="TouchTargetSizeCheck">
-
-
-        </EditText>
-
-        <EditText
-            android:id="@+id/edtColB"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="Input column"
-            android:inputType="number"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <Button
-            android:id="@+id/btnAddB"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Enter" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layoutViewB"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
-
-        <TableLayout
-            android:id="@+id/tblInputB"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:gravity="center_horizontal">
-
-        </TableLayout>
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Spinner
-            android:id="@+id/spinner"
-            android:layout_width="322dp"
-            android:layout_height="wrap_content"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
-        <Button
-            android:id="@+id/Show"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Result" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal">
-
-
-        <TableLayout
-            android:id="@+id/TableLayout2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="20dp"
-            android:gravity="center_horizontal">
-
-        </TableLayout>
-    </LinearLayout>
-
-
-</LinearLayout>
+</ScrollView>

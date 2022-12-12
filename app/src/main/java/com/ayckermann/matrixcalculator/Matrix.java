@@ -2,10 +2,13 @@ package com.ayckermann.matrixcalculator;
 
 import android.util.Log;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 public class Matrix {
 
     public int x,y;
-    public Double value[][];
+    public Double[][] value;
 
     public  Matrix(){
 
@@ -13,7 +16,13 @@ public class Matrix {
     public Matrix(int x, int y){
         this.x = x;
         this.y = y;
-        this.value = new Double[x][y];
+        Double[][] temp = new Double[x][y];
+        for(int i=0;i<x;i++){
+            for(int j=0;j<y;j++){
+                temp[i][j] = 0.0;
+            }
+        }
+        this.value = temp;
     }
     public Matrix(int x, int y, Double[][] value){
         this.x = x;
@@ -76,11 +85,11 @@ public class Matrix {
 
     public Matrix kaliMatrix(Matrix b){
         if(y == b.x){
-            Matrix hasil = new Matrix(x,b.y);
+            Matrix hasil = new Matrix(x, b.y);
             for (int i = 0; i < x; i++) {
                 for (int j =0; j < b.y; j++){
                     for (int k = 0; k < y; k++){
-                        hasil.value[i][j] += value[i][j] * b.value[k][j];
+                        hasil.value[i][j] += value[i][k] * b.value[k][j];
 
                     }
                 }
@@ -120,21 +129,25 @@ public class Matrix {
         Matrix hasil = new Matrix(x-1,y-1);
         int a1 =0, b1=0;
 
-        for (int i = 0; i < x; i++) {
-            for (int j =0; j < y; j++){
-                if(i != a && j != b){
-                    if(b1<y-1){
-                        hasil.value[a1][b1] = value[i][j];
-                        b1++;
-                    }
-                    if(b1==y-1){
-                        b1=0;
-                        a1++;
+        if (x==1 && y ==1){
+            hasil = this;
+        }
+        else{
+            for (int i = 0; i < x; i++) {
+                for (int j =0; j < y; j++){
+                    if(i != a && j != b){
+                        if(b1<y-1){
+                            hasil.value[a1][b1] = value[i][j];
+                            b1++;
+                        }
+                        if(b1==y-1){
+                            b1=0;
+                            a1++;
+                        }
                     }
                 }
             }
         }
-
         return hasil;
     }
     public double detMinor(int a, int b){
@@ -145,16 +158,21 @@ public class Matrix {
     }
     public Matrix kofaktor(){
         Matrix hasil = new Matrix(x,y);
-        for(int i =0;i < x;i++){
-            for(int j =0 ; j < y;j++){
-                if(i%2 ==0 && j%2 !=0){
-                    hasil.value[i][j] = -1 * detMinor(i,j);
-                }
-                else if(i%2!=0 && j%2==0){
-                    hasil.value[i][j] = -1 * detMinor(i,j);
-                }
-                else{
-                    hasil.value[i][j] =detMinor(i,j);
+        if (x==1 && y ==1){
+            hasil = this;
+        }
+        else{
+            for(int i =0;i < x;i++){
+                for(int j =0 ; j < y;j++){
+                    if(i%2 ==0 && j%2 !=0){
+                        hasil.value[i][j] = -1 * detMinor(i,j);
+                    }
+                    else if(i%2!=0 && j%2==0){
+                        hasil.value[i][j] = -1 * detMinor(i,j);
+                    }
+                    else{
+                        hasil.value[i][j] =detMinor(i,j);
+                    }
                 }
             }
         }
@@ -162,14 +180,22 @@ public class Matrix {
 
     }
     public Matrix adjoin(){
-        Matrix hasil = this.kofaktor();
-        return hasil.transpose();
+
+        Matrix hasil = this.kofaktor().transpose();
+
+        if (x==1 && y ==1){
+            hasil = this;
+        }
+        return hasil;
 
     }
 
     public Matrix invers(){
         Matrix hasil = this.adjoin();
-        if(x==2 && y==2){
+        if (x==1 && y ==1){
+            hasil = this;
+        }
+        else if(x==2 && y==2){
             double det = determinan();
             Double temp2[][] = {{value[1][1],-1*value[0][1]},{-1*value[1][0],value[0][0]} };
             Matrix temp = new Matrix(x,y,temp2);

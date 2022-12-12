@@ -1,9 +1,11 @@
 <resources>
     <string name="app_name">Matrix Calculator</string>
     <string-array name="operation">
-        <item>Addition</item>
-        <item>Substraction</item>
-        <item>Multiplication</item>
+        <item>A + B</item>
+        <item>A - B</item>
+        <item>B - A</item>
+        <item>A x B</item>
+        <item>B x A</item>
         <item>Transpose A</item>
         <item>Transpose B</item>
         <item>Determinant A</item>
