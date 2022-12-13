@@ -101,8 +101,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         edtColA=findViewById(R.id.edtColA);
         btnAddA=findViewById(R.id.btnAddA);
 
-        edtColB=findViewById(R.id.edtRowB);
-        edtRowB=findViewById(R.id.edtColB);
+        edtColB=findViewById(R.id.edtColB);
+        edtRowB=findViewById(R.id.edtRowB);
         btnAddB=findViewById(R.id.btnAddB);
 
         Show=findViewById(R.id.Show);
