@@ -31,7 +31,6 @@ import java.text.DecimalFormat;
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     int RowA,ColA, RowB,ColB;
-    int count,i,j;
     Double arrayA[][] , arrayB[][];
     Matrix matrixA = new Matrix(), matrixB = new Matrix(), matrixResult = new Matrix();
     String strRowA,strColA,strRowB,strColB;
@@ -41,6 +40,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     Button btnAddB,btnAddA,Show;
     TableLayout tblInputA,tblInputB,TabLayout_Show;
     Spinner spinner;
+
+    int i,j;
+    int flag1=0,flag2=0;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -121,6 +123,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     public void setBtnAddA(){
 
+        LinearLayout layout = (LinearLayout) findViewById(R.id.layoutButttonA);
+        final Button create = new Button(MainActivity.this);
+        create.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        create.setText("Create Matrix A");
+
+        if(flag1 > 0){
+            tblInputA.removeAllViews();
+            create.setVisibility(View.GONE);
+        }
+        flag1 = 1;
+
         strRowA=edtRowA.getText().toString();
         strColA=edtColA.getText().toString();
 
@@ -150,10 +163,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             tblInputA.addView(row);
 
         }
-        LinearLayout layout = (LinearLayout) findViewById(R.id.layoutButttonA);
-        final Button create = new Button(MainActivity.this);
-        create.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        create.setText("Create Matrix A");
+
         layout.addView(create);
 
         create.setOnClickListener(new View.OnClickListener() {
@@ -165,19 +175,19 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             }
         });
 
-        final Button delete = new Button(MainActivity.this);
-        delete.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        delete.setText("Delete");
-        layout.addView(delete);
-
-        delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                tblInputA.removeAllViews();
-                create.setVisibility(View.GONE);
-                delete.setVisibility(View.GONE);
-            }
-        });
+//        final Button delete = new Button(MainActivity.this);
+//        delete.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+//        delete.setText("Delete");
+//        layout.addView(delete);
+//
+//        delete.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                tblInputA.removeAllViews();
+//                create.setVisibility(View.GONE);
+//                delete.setVisibility(View.GONE);
+//            }
+//        });
 
 
     }
@@ -206,6 +216,18 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     public void setBtnAddB(){
+
+        LinearLayout layout = (LinearLayout) findViewById(R.id.layoutButtonB);
+        final Button create = new Button(MainActivity.this);
+        create.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        create.setText("Create Matrix B");
+
+        if(flag2>0){
+            tblInputB.removeAllViews();
+            create.setVisibility(View.GONE);
+        }
+        flag2 =1;
+
 
         strRowB=edtRowB.getText().toString();
         strColB=edtColB.getText().toString();
@@ -236,10 +258,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             tblInputB.addView(row);
 
         }
-        LinearLayout layout = (LinearLayout) findViewById(R.id.layoutButtonB);
-        final Button create = new Button(MainActivity.this);
-        create.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        create.setText("Create Matrix B");
+
         layout.addView(create);
 
         create.setOnClickListener(new View.OnClickListener() {
@@ -251,19 +270,19 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             }
         });
 
-        final Button delete = new Button(MainActivity.this);
-        delete.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        delete.setText("Delete");
-        layout.addView(delete);
-
-        delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                tblInputB.removeAllViews();
-                create.setVisibility(View.GONE);
-                delete.setVisibility(View.GONE);
-            }
-        });
+//        final Button delete = new Button(MainActivity.this);
+//        delete.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+//        delete.setText("Delete");
+//        layout.addView(delete);
+//
+//        delete.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                tblInputB.removeAllViews();
+//                create.setVisibility(View.GONE);
+//                delete.setVisibility(View.GONE);
+//            }
+//        });
 
     }
 

@@ -119,7 +119,6 @@ public class Matrix {
         for (int i = 0; i < x; i++) {
             for (int j =0; j < y; j++){
                 hasil.value[j][i] = value[i][j];
-
             }
         }
         return hasil;
