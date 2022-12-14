@@ -2,9 +2,6 @@ package com.ayckermann.matrixcalculator;
 
 import android.util.Log;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
 public class Matrix {
 
     public int x,y;
@@ -239,19 +236,15 @@ public class Matrix {
             hasil = (value[0][0] * detMinor(0,0)) -
                     (value[0][1] * detMinor(0,1)) +
                     (value[0][2] * detMinor(0,2)) -
-                    (value[0][4] * detMinor(0,3)) +
-                    (value[0][5] * detMinor(0,4));
+                    (value[0][3] * detMinor(0,3)) +
+                    (value[0][4] * detMinor(0,4));
 
             return hasil;
-
         }
 
         else{
-
             Log.e("Dimensi Determinant", "Dimensi tidak cocok");
             return 0;
         }
-
-
     }
 }

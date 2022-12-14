@@ -12,8 +12,8 @@
         <item>Determinant B</item>
         <item>Cofactor A</item>
         <item>Cofactor B</item>
-        <item>Adjoin A</item>
-        <item>Adjoin B</item>
+        <item>Adjoint A</item>
+        <item>Adjoint B</item>
         <item>Inverse A</item>
         <item>Inverse B</item>
     </string-array>
