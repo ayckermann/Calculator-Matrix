@@ -47,6 +47,7 @@ Inisialisasi-nya juga akan disertai dengan constructor(meng-assign nilai awal cl
  
 
 <h3>Operasi penjumlahan dan pengurangan</h3>
+
 public Matrix tambahMatrix(Matrix b){
     Matrix hasil = new Matrix(x,y);
     for (int i = 0; i < x; i++) {
