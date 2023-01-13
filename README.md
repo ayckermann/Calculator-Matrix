@@ -1,11 +1,11 @@
-#Program Matrix Calculator
+##Program Matrix Calculator
 
         
 
 Link download apk       : https://drive.google.com/file/d/1ZWBreEY1yaF_lx3LCoFNPfYHUhnxo-nW/view?usp=sharing
 
  
-Dalam folder project Matrix Calculator terdapat banyak file dan folder namun kebanyakan hanyalah program untuk tampilan dan juga builder seperti gradle yang harus ada dalam project pemrograman mobile menggunakan android studio.
+Dalam folder project Matrix Calculator terdapat banyak file dan folder namun kebanyakan hanyalah program untuk tampilan dan juga builder seperti gradle yang harus adadalam project pemrograman mobile menggunakan android studio.
 
 Untuk algoritma tentang bagaimana aplikasi Matrix Calculator meng-kalkulasikan tiap operasi matrix ada dalam file class Matrix.java.
 
