@@ -1,4 +1,4 @@
-<h1>Program Matrix Calculator</h2>
+<h1>Program Matrix Calculator</h1>
 
         
 
@@ -46,7 +46,7 @@ Inisialisasi-nya juga akan disertai dengan constructor(meng-assign nilai awal cl
 
  
 
-#Operasi penjumlahan dan pengurangan
+<h3>Operasi penjumlahan dan pengurangan</h3>
 public Matrix tambahMatrix(Matrix b){
     Matrix hasil = new Matrix(x,y);
     for (int i = 0; i < x; i++) {
@@ -70,7 +70,7 @@ Melakukan perulangan untuk tiap index elemen matrix, lalu meng-assign variable h
 
 
 
-#Operasi perkalian matrix dengan matrix
+<h3>Operasi perkalian matrix dengan matrix</h3>
 public Matrix kaliMatrix(Matrix b){
     if(y == b.x){
         Matrix hasil = new Matrix(x, b.y);
