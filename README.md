@@ -13,6 +13,7 @@ Penjelasan  Algoritma atau codenya sebagai berikut :
 
 <h2>Inisialisasi</h2>
 
+```java
         public class Matrix {
 
             public int x,y;
@@ -37,6 +38,8 @@ Penjelasan  Algoritma atau codenya sebagai berikut :
                 this.y = y;
                 this.value = value;
             }
+```
+
 Menginisialisasi class dengan attribute int x(untuk baris matrix), int y(untuk kolom matrix) 
 2d array double value dengan index yang akan di isi dengan baris dan kolom (untuk nilai di tiap elemen matrix).
 
@@ -49,6 +52,7 @@ Inisialisasi-nya juga akan disertai dengan constructor(meng-assign nilai awal cl
 
 <h2>Operasi penjumlahan dan pengurangan</h2>
 
+```java
         public Matrix tambahMatrix(Matrix b){
             Matrix hasil = new Matrix(x,y);
             for (int i = 0; i < x; i++) {
@@ -68,12 +72,15 @@ Inisialisasi-nya juga akan disertai dengan constructor(meng-assign nilai awal cl
             }
             return hasil;
         }
+```
+
 Melakukan perulangan untuk tiap index elemen matrix, lalu meng-assign variable hasil dengan penjumlahan atau pengurangan matrix a dan b di tiap index elemen yang sama.
 
 
 
 <h2>Operasi perkalian matrix dengan matrix</h2>
 
+```java
         public Matrix kaliMatrix(Matrix b){
             if(y == b.x){
                 Matrix hasil = new Matrix(x, b.y);
@@ -95,6 +102,7 @@ Melakukan perulangan untuk tiap index elemen matrix, lalu meng-assign variable h
 
             }
         }
+```
 
 Melakukan perulangan untuk tiap index elemen matrix dan satu lagi perulangan dibawahnya untuk menjumlahkan hasil perkalian antar baris dan kolom.
 
@@ -102,6 +110,7 @@ Melakukan perulangan untuk tiap index elemen matrix dan satu lagi perulangan dib
  
 <h2>Operasi transpose matrix</h2>
 
+```java
         public Matrix transpose(){
             Matrix hasil = new Matrix(y,x);
             for (int i = 0; i < x; i++) {
@@ -111,12 +120,14 @@ Melakukan perulangan untuk tiap index elemen matrix dan satu lagi perulangan dib
             }
             return hasil;
         }
+```
 Melakukan perulangan untuk tiap index elemen matrix dan meng-assign nilai hasil dengan index elemen yang terbalik dari matrix normal nya.
 
 
 
 <h2>Operasi kofaktor matrix</h2>
 
+```java
         public Matrix kofaktor(){
             Matrix hasil = new Matrix(x,y);
             if (x==1 && y ==1){
@@ -140,6 +151,8 @@ Melakukan perulangan untuk tiap index elemen matrix dan meng-assign nilai hasil 
             return hasil;
 
         }
+```
+
 Melakukan perulangan untuk tiap index elemen matrix dan meng-assign hasil dengan determinan dari minor di elemen tersebut (diambil dari fungsi determinan minor), dan juga memberikan kondisi saat elemen tersebut harus mengganti tanda (+ / -).
 Untuk matrix ordo 1x1 hasilnya adalah nilai elemen 1 1 itu sendiri.
 
@@ -147,6 +160,7 @@ Untuk matrix ordo 1x1 hasilnya adalah nilai elemen 1 1 itu sendiri.
 
 <h2>Operasi adjoint matrix</h2>
 
+```java
         public Matrix adjoin(){
 
             Matrix hasil = this.kofaktor().transpose();
@@ -157,6 +171,8 @@ Untuk matrix ordo 1x1 hasilnya adalah nilai elemen 1 1 itu sendiri.
             return hasil;
 
         }
+```
+
 Mentranspose kan matrix kofaktor.
 Untuk matrix ordo 1x1 hasilnya adalah nilai elemen 1 1 itu sendiri.
 
@@ -164,6 +180,7 @@ Untuk matrix ordo 1x1 hasilnya adalah nilai elemen 1 1 itu sendiri.
 
 <h2>Operasi invers matrix</h2>
 
+```java
         public Matrix invers(){
             Matrix hasil = this.adjoin();
             if (x==1 && y ==1){
@@ -182,6 +199,8 @@ Untuk matrix ordo 1x1 hasilnya adalah nilai elemen 1 1 itu sendiri.
             }
             return hasil;
         }
+```
+
 Untuk matrix ordo 1x1 hasilnya adalah nilai elemen 1 1 itu sendiri.
 Untuk matrix ordo 2x2 algoritmanya ditulis manual sesuai dengan rumus invers ordo 2x2. 
 Untuk Matrix ordo 3x3 dan keatas menggunakan adjoin(diambil dari fungsi adjoin) lalu dikalikan 1/determinan-nya.
@@ -191,6 +210,7 @@ Determinan diambil dari fungsi determinan.
 
 <h2>Operasi determinant matrix</h2>
 
+```java
         public double determinan(){
             if (x==1 && y ==1){
                 return value[0][0];
@@ -234,6 +254,8 @@ Determinan diambil dari fungsi determinan.
                 return 0;
             }
         }
+```
+
 Untuk matrix ordo 1x1 hasilnya adalah nilai elemen 1 1 itu sendiri.
 Untuk matrix ordo 2x2 algoritmanya ditulis manual sesuai dengan rumus invers ordo 2x2. 
 Untuk matrix ordo 3x3 dan keatas menggunakan metode kofaktor(ekspansi baris pertama), caranya dengan mengalikan elemen pada ekspansi baris pertama dengan determinan minornya (yang diambil dari fuungsi determinan minor)
@@ -243,6 +265,7 @@ Untuk matrix ordo 3x3 dan keatas menggunakan metode kofaktor(ekspansi baris pert
 
 <h2>Operasi perkalian matrix dengan konstanta, minor matrix, determinant minor matrix</h2>
 
+```java
         public Matrix kaliKoefisien(double n){
             Matrix hasil = new Matrix(x,y);
             for (int i = 0; i < x; i++) {
@@ -285,6 +308,8 @@ Untuk matrix ordo 3x3 dan keatas menggunakan metode kofaktor(ekspansi baris pert
             return hasil;
 
         }
+```
+
 Operasi atau fungsi diatas dibuat untuk membantu operasi lainnya, sehingga ini tidak bisa digunakan dalam inputan pengguna(sebenarnya bisa namun saya malas membuat inputan dan tampilannya).
 Untuk operasi matrix kali konstanta, Melakukan perulangan untuk tiap index elemen matrix dan mengassign nilai hasil dengan perkalian konstanta(dari inputan parameter) dengan elemen matrix dalam perulangan.
 Untuk operasi minor, Melakukan perulangan untuk tiap index elemen matrix lalu mencari elemen minor nya dengan kondisi seperti diatas.
